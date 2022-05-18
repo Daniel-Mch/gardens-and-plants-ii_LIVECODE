@@ -4,7 +4,7 @@
       <%= link_to "back", garden_path(@plant.garden) %>
       <h2>Add a new tag for <%= @plant.name %></h2>
       <%= simple_form_for [@plant, @plant_tag] do |f| %>
-        <<%= f.input :tag, collection: Tag.all,
+        <%= f.input :tag, collection: Tag.all,
 									    input_html: {multiple: true, data: {controller: "select2"}},
 									    include_hidden: false %>
         <%= f.submit "Add tag", class: "btn btn-primary my-3" %>
