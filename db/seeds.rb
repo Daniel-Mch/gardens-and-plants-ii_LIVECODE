@@ -1,44 +1,42 @@
+# puts "Clearing databse"
 # Garden.destroy_all if Rails.env.development?
 
-# Garden.create!(
+# puts "Creating Gardens"
+# little = Garden.create!(
 #   name: "My Little Garden",
 #   banner_url: "https://raw.githubusercontent.com/lewagon/fullstack-images/master/rails/parks-and-plants/garden_1.jpg"
 # )
 
-# Garden.create!(
+# other = Garden.create!(
 #   name: "My Other Garden",
 #   banner_url: "https://raw.githubusercontent.com/lewagon/fullstack-images/master/rails/parks-and-plants/garden_2.jpg"
 # )
 
-puts "Clearing databse"
-Garden.destroy_all if Rails.env.development?
+# puts "Creating Plants"
+# Plant.create!(
+#   name: "Monstera",
+#   image_url: "https://raw.githubusercontent.com/lewagon/fullstack-images/master/rails/parks-and-plants/plants/monstera.jpg",
+#   garden: little
+# )
 
-puts "Creating Gardens"
-little = Garden.create!(
-  name: "My Little Garden",
-  banner_url: "https://raw.githubusercontent.com/lewagon/fullstack-images/master/rails/parks-and-plants/garden_1.jpg"
-)
+# Plant.create!(
+#   name: "Philo",
+#   image_url: "https://raw.githubusercontent.com/lewagon/fullstack-images/master/rails/parks-and-plants/plants/philo.jpg",
+#   garden: little
+# )
 
-other = Garden.create!(
-  name: "My Other Garden",
-  banner_url: "https://raw.githubusercontent.com/lewagon/fullstack-images/master/rails/parks-and-plants/garden_2.jpg"
-)
+# Plant.create!(
+#   name: "Dieff",
+#   image_url: "https://raw.githubusercontent.com/lewagon/fullstack-images/master/rails/parks-and-plants/plants/dieffenbachia.jpg",
+#   garden: other
+# )
 
-puts "Creating Plants"
-Plant.create!(
-  name: "Monstera",
-  image_url: "https://raw.githubusercontent.com/lewagon/fullstack-images/master/rails/parks-and-plants/plants/monstera.jpg",
-  garden: little
-)
+names =  %w(Fruit\ tree Cactus Greasy\ plant Flower Ferns Conifers Jungle Shadow Sun)
+# => ["Fruit tree", "Cactus", "Greasy plant", "Flower", "Ferns", "Conifers"]
 
-Plant.create!(
-  name: "Philo",
-  image_url: "https://raw.githubusercontent.com/lewagon/fullstack-images/master/rails/parks-and-plants/plants/philo.jpg",
-  garden: little
-)
+puts "Creating Tags 🏷"
+names.each do |name|
+  puts "Creating #{name} tag."
+  Tag.create(name: name)
+end
 
-Plant.create!(
-  name: "Dieff",
-  image_url: "https://raw.githubusercontent.com/lewagon/fullstack-images/master/rails/parks-and-plants/plants/dieffenbachia.jpg",
-  garden: other
-)
