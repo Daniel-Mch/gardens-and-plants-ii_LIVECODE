@@ -6,7 +6,7 @@
 
 <div class="container">
   <div class="row">
-  <div class="col-8">
+  <div class="col-6 col-md-8">
     <div class="cards my-3">
         <% @plants.each do |plant| %>
             <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= plant.image_url %>')">
@@ -16,7 +16,7 @@
         <% end %>
     </div>
   </div>
-    <div class="col-4">
+    <div class="col-6 col-md-4">
       <div class="border my-3 p-3 rounded">
         <h4>Add a plant</h4>
         <%= simple_form_for [@garden, @plant] do |f| %>
