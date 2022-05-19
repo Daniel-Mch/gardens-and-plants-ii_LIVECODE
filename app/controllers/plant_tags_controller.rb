@@ -14,4 +14,17 @@ class PlantTagsController < ApplicationController
     end
     redirect_to garden_path(@plant.garden)
   end
+
+  def destroy
+    raise
+    plant_tag =PlantTag.find(params[:plant_id])
+    plant_tag.destroy
+    # redirect_to gardens_path(@plant)
+  end
+
+  # def destroy
+  #   @bookmark = Bookmark.find(params[:id])
+  #   @bookmark.destroy
+  #   redirect_to list_path(@bookmark.list)
+  # end
 end
